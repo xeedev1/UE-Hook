@@ -1,5 +1,4 @@
-# Tutorial I followed
-[web Dev Simplified](https://www.youtube.com/watch?v=0ZJgIjIuY7U)
+Tutorial I followed: https://www.youtube.com/watch?v=0ZJgIjIuY7U
 Also read this blog: https://blog.webdevsimplified.com/2020-04/use-effect/
 
 # Getting Started with Create React App
