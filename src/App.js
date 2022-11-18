@@ -3,7 +3,8 @@ import React, {useState, useEffect} from 'react';
 function App() {
   const [resourceType, setResourceType] = useState('Posts');
   const [itemArray, setItemArray] = useState([]); 
-
+  
+  // useEffect(()=>{do this}, [if this changes])
   useEffect(()=>{
     fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
   .then(response => response.json())
