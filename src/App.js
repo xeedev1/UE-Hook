@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
 
 function App() {
+  const [resourceType, setResourceType] = useState('Posts');
+  const [itemArray, setItemArray] = useState([]); 
+
+  useEffect(()=>{
+    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
+  .then(response => response.json())
+  .then(json => setItemArray(json));
+  },[resourceType]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <button onClick={()=>{setResourceType('Posts')}}>Posts</button>
+    <button onClick={()=>{setResourceType('Users')}}>Users</button>
+    <button onClick={()=>{setResourceType('Comments')}}>Comments</button>
+    <h1>{resourceType}</h1>
+    {itemArray.map(item=>{
+      return <p>{JSON.stringify(item)}</p>
+    })}
+    </>
+  )
 }
 
 export default App;
