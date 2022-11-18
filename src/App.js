@@ -1,3 +1,12 @@
+// useEffect(() => {
+//   console.log('This is my side effect')
+
+//   return () => {
+//     console.log('This is my clean up')
+//   }
+// })
+
+
 import React, {useState, useEffect} from 'react';
 
 function App() {
